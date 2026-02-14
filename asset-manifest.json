@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/apartmentCountdown/static/css/main.9ed2452c.css",
+    "main.js": "/apartmentCountdown/static/js/main.e76e779a.js",
+    "static/media/night.jpg": "/apartmentCountdown/static/media/night.1f25881d83355afaf345.jpg",
+    "static/media/morning.jpg": "/apartmentCountdown/static/media/morning.75b080ad4b23fe1ce303.jpg",
+    "static/media/bulb.png": "/apartmentCountdown/static/media/bulb.ba4ef988b407a3f24493.png",
+    "index.html": "/apartmentCountdown/index.html",
+    "main.9ed2452c.css.map": "/apartmentCountdown/static/css/main.9ed2452c.css.map",
+    "main.e76e779a.js.map": "/apartmentCountdown/static/js/main.e76e779a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9ed2452c.css",
+    "static/js/main.e76e779a.js"
+  ]
+}
