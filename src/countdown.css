@@ -1,0 +1,287 @@
+/* Layout */
+
+.app {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-family: sans-serif;
+  color: white;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);
+  animation: scaleBg 20s ease-in-out infinite alternate;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.7)
+  );
+}
+
+@keyframes scaleBg {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+/* Toggle Button */
+
+.dark-toggle {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 10;
+  font-size: 22px;
+  padding: 10px 14px;
+  border-radius: 20%;
+  border: 1px solid rgb(153, 153, 153); 
+  cursor: pointer;
+  backdrop-filter: blur(20px);
+  background: rgba(255,255,255,0.08);
+
+}
+
+/* Content */
+
+.content {
+  position: relative;
+  z-index: 5;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 10px;
+  text-align: center;
+  margin: 0px; 
+}
+
+/* Title */
+
+.title {
+  font-size: 67px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin: 0px;
+}
+
+.subtitle {
+  opacity: 0.7;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+}
+
+/* Countdown Grid */
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 160px);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+/* Card Style */
+
+.count-card {
+  position: relative;
+  backdrop-filter: blur(20px);
+  background: rgba(255,255,255,0.08);
+  border-radius: 24px;
+  padding: 30px 20px;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 0 30px rgba(255,255,255,0.1);
+  transition: 0.3s;
+  animation: fadeUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+.count-card:hover {
+  transform: scale(1.05);
+  background: rgba(255,255,255,0.15);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.count-number {
+  font-size: 48px;
+  font-weight: 200;
+  margin-bottom: 10px;
+  text-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
+
+.count-label {
+  font-size: 12px;
+  letter-spacing: 3px;
+  opacity: 0.7;
+}
+
+/* Bulbasaur Button */
+.confetti-btn-container {
+  position: absolute;
+  display: flex;
+  right: 0; 
+  bottom: 0; 
+  margin: 30px; 
+}
+.bulba-btn {
+  padding: 14px 28px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  color: white;
+  transition: 0.3s;
+}
+
+.bulba-btn:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+/* Confetti */
+
+.confetti {
+  position: absolute;
+  top: -50px;
+  pointer-events: none;
+  animation: fall linear forwards;
+  z-index: 20;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(720deg);
+  }
+}
+/* Countdown Grid - make it responsive */
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 160px);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+/* Card Style - mobile adjustments */
+.count-card {
+  position: relative;
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 30px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+  transition: 0.3s;
+  animation: fadeUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 680px) {
+  .countdown-grid {
+    grid-template-columns: repeat(2, 120px);
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+
+  .count-card {
+    padding: 20px 12px;
+    border-radius: 18px;
+  }
+
+  .count-number {
+    font-size: 36px;
+  }
+
+  .count-label {
+    font-size: 10px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .bulba-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .dark-toggle {
+    font-size: 18px;
+    padding: 8px 12px;
+  }
+}
+
+
+/* Spotify Player */
+.spotify-player {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 10;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Make it smaller and responsive on mobile */
+@media (max-width: 480px) {
+  .spotify-player iframe {
+    width: 180px;
+    height: 60px;
+  }
+
+  .spotify-player {
+    bottom: 12px;
+    left: 12px;
+  }
+}
+
+/* Progress Bar Container */
+.progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 15;
+}
+
+/* Progress Bar Fill */
+.progress-bar {
+  height: 100%;
+  background: #dbc610; /* Spotify green, looks nice */
+  transition: width 0.5s ease;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .progress-container {
+    height: 6px;
+  }
+}

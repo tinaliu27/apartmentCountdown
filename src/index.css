@@ -1,0 +1,109 @@
+.root {
+  /* wrapper class if needed */
+}
+
+:root{
+  --bg: #f6f8fa;
+  --card-bg: #ffffff;
+  --text: #0f1724;
+  --muted: #516276;
+  --box-bg: #f1f5f9;
+  --muted-border: rgba(15,23,42,0.06);
+}
+
+body{
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Dark theme variables */
+body.theme-dark{
+  --bg: #071021;
+  --card-bg: #071827;
+  --text: #e6eef8;
+  --muted: #9fb0cf;
+  --box-bg: #0b2330;
+  --muted-border: rgba(255,255,255,0.06);
+}
+
+/* Layout: top padding 100px, horizontally centered, card stays centered on resize */
+.app {
+  display: flex;
+  min-height: 100vh;
+  align-items: flex-start; /* stick to top with padding */
+  justify-content: center; /* center horizontally */
+  padding-top: 100px;
+  box-sizing: border-box;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 28px 36px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  text-align: center;
+  color: var(--text);
+  max-width: 520px;
+  width: calc(100% - 48px);
+}
+
+.time-grid {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+  justify-content: center;
+}
+
+.time-box {
+  min-width: 68px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #f1f5f9;
+}
+
+.label {
+  font-size: 12px;
+  color: #516276;
+  margin-top: 6px;
+}
+
+.time-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 68px;
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--box-bg);
+  border: 1px solid var(--muted-border);
+}
+
+
+.time-box > div:first-child {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+/* Theme toggle button (top-right) */
+.theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--muted-border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1000;
+}
+
+.theme-toggle .label {
+  font-size: 13px;
+}
